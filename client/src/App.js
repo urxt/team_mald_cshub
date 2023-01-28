@@ -1,12 +1,9 @@
 import './App.css';
 import React, { Component } from 'react';
-import * as ReactDOM from 'react-dom';
 
 function App(){
   return (
     <div>
-      <Welcome name="Daniel" />
-      <Welcome name="Daniel" />
       <Welcome name="Daniel" />
     </div>
   );
