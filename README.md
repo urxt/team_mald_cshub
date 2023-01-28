@@ -4,4 +4,4 @@ MeetYU
 
 The Best Event finder site in town! 
 
-!(demo.png)
+![Demo](./demo.png)
