@@ -18,7 +18,7 @@ export default function App(){
     <div className="App">
       <EventSidebar className="sidebar"></EventSidebar>
       <EventPage></EventPage>
-      {/* <CreateEvent></CreateEvent> */}
+      { <CreateEvent></CreateEvent> }
     </div>
     */
    return (
