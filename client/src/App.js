@@ -4,14 +4,8 @@ import * as ReactDOM from 'react-dom';
 import EventPage from './Pages/EventPage';
 import EventSidebar from './Components/EventSidebar';
 import CreateEvent from './Pages/CreateEvent';
-import OpenLayers from './OpenLayers/OpenLayers';
-
-const user = {
-  name: 'John Jones',
-  email: "john@jones.com",
-  imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png",
-  imageSize: 90,
-};
+import { Circle as CircleStyle, Fill, Stroke, Style } from 'ol/style';
+import { osm, vector } from "./Source";
 
 export default function App(){
     /*
@@ -26,7 +20,6 @@ export default function App(){
       <h1>MeetYU</h1>
       <MapButton />
       <GenerateMap />
-      <User />
     </div>
    );
 }
@@ -41,11 +34,6 @@ function GenerateMap() {
   return ( 
     <>
       <h3>York University Map (Keele Campus)</h3>
-      <script>
-      map = new OpenLayers.Map("demoMap");
-      map.addLayer(new OpenLayers.Layers.OSM());
-      map.zoomToMaxExtent();
-      </script>
     </>
   );
 }
