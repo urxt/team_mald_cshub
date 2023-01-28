@@ -5,10 +5,6 @@ import EventPage from './Pages/EventPage';
 
 function App(){
   return (
-    <div>
-      <Welcome name="Daniel" />
-      <Welcome name="Daniel" />
-      <Welcome name="Daniel" />
     <div className="App">
       <EventPage></EventPage>
     </div>
