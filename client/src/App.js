@@ -1,27 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react';
+import * as ReactDOM from 'react-dom';
 
-function App() {
-  const element = <h1>Meetup App</h1>;
-  var user1 = new User("John", 20, "Male", "john@john.com")
+function App(){
   return (
-    // <div className="App">
-      // <header className="App-header">
-        // <img src={logo} className="App-logo" alt="logo" />
-        // <p>
-          // Meetup App
-        // </p>
-      // </header>
-    // </div>
-    user1.toString()
+    <div>
+      <Welcome name="Daniel" />
+      <Welcome name="Daniel" />
+      <Welcome name="Daniel" />
+    </div>
+
+    <div>
+      <User name="Wahoo", age=20, gender="male", email="john" />
+    </div>
   );
 }
 
-function User (name, age, gender, email) {
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+function User(name, age, gender, email) {
   this.name = name;
   this.age = age;
   this.gender = gender;
   this.email = email;
+  return this.name;
 }
 
 User.prototype.toString = function UserToString() {
