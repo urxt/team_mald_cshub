@@ -1,6 +1,8 @@
 import './App.css';
 import React, { Component, useState } from 'react';
 import * as ReactDOM from 'react-dom';
+//import { Marker, Popup } from 'react-leaflet';
+//import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login";
 import Home from "./Pages/Home";
@@ -10,8 +12,9 @@ import ProfilePage from './Pages/ProfilePage';
 import CreateEvent from './Pages/CreateEvent';
 import { osm, vector } from "./Source";
 
-export default function App(){
-    /*
+
+export defaut function App(){
+  return (
     <div className="App">
       <ProfilePage></ProfilePage>
       {/* <EventSidebar className="sidebar"></EventSidebar>
@@ -19,13 +22,7 @@ export default function App(){
       {/* <CreateEvent></CreateEvent> */}
       <EventSidebar className="sidebar"></EventSidebar>
       <EventPage></EventPage>
-      { <CreateEvent></CreateEvent> }
-    </div>
-    */
-   return (
 
-    <div className="App">
-      
       <Router>
         <Routes>
           <Route path="/" exact element={<Home />} />
@@ -33,12 +30,8 @@ export default function App(){
         </Routes>
       </Router>
 
-    <div>
-      <h1>MeetYU</h1>
-      <MapButton />
-      <GenerateMap />
     </div>
-   );
+  );
 }
 
 function MapButton() {
@@ -47,13 +40,12 @@ function MapButton() {
   );
 }
 
-function GenerateMap() {
-  return ( 
-    <>
-      <h3>York University Map (Keele Campus)</h3>
-    </>
-  );
-}
+const user = {
+  name: 'John Jones',
+  email: "john@jones.com",
+  imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png",
+  imageSize: 90,
+};
 
 function User() {
   return(
@@ -71,4 +63,8 @@ function User() {
       />
     </>
   );
+}
+
+User.prototype.toString = function UserToString() {
+  return `Name: ${this.name}\n Age: ${this.age}\n Email: ${this.email}\n Gender: ${this.gender}`;
 }
