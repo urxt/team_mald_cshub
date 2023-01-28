@@ -1,17 +1,34 @@
 import './App.css';
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import * as ReactDOM from 'react-dom';
-
 import { Marker, Popup } from 'react-leaflet';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
-
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login";
 import Home from "./Pages/Home";
+import EventPage from './Pages/EventPage';
+import EventSidebar from './Components/EventSidebar';
+import CreateEvent from './Pages/CreateEvent';
+import OpenLayers from './OpenLayers/OpenLayers';
 
+const user = {
+  name: 'John Jones',
+  email: "john@jones.com",
+  imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png",
+  imageSize: 90,
+};
 
-function App(){
-  return (
+export default function App(){
+    /*
+    <div className="App">
+      <EventSidebar className="sidebar"></EventSidebar>
+      <EventPage></EventPage>
+      { <CreateEvent></CreateEvent> }
+>>>>>>> 3c6d7bee5e501474f551cbb33ab5076eb1aaccc2
+    </div>
+    */
+   return (
+
     <div className="App">
       
       <Router>
@@ -21,9 +38,13 @@ function App(){
         </Routes>
       </Router>
 
-      {/* <CreateEvent></CreateEvent> */}
+    <div>
+      <h1>MeetYU</h1>
+      <MapButton />
+      <GenerateMap />
+      <User />
     </div>
-  );
+   );
 }
 
 function MapButton() {
@@ -32,12 +53,18 @@ function MapButton() {
   );
 }
 
-const user = {
-  name: 'John Jones',
-  email: "john@jones.com",
-  imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png",
-  imageSize: 90,
-};
+function GenerateMap() {
+  return ( 
+    <>
+      <h3>York University Map (Keele Campus)</h3>
+      <script>
+      map = new OpenLayers.Map("demoMap");
+      map.addLayer(new OpenLayers.Layers.OSM());
+      map.zoomToMaxExtent();
+      </script>
+    </>
+  );
+}
 
 function User() {
   return(
@@ -56,9 +83,3 @@ function User() {
     </>
   );
 }
-
-User.prototype.toString = function UserToString() {
-  return `Name: ${this.name}\n Age: ${this.age}\n Email: ${this.email}\n Gender: ${this.gender}`;
-}
-
-export default App;
