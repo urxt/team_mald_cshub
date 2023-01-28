@@ -1,17 +1,26 @@
 import './App.css';
 import React, { Component } from 'react';
 import * as ReactDOM from 'react-dom';
-import EventPage from './Pages/EventPage';
-import EventSidebar from './Components/EventSidebar';
-import CreateEvent from './Pages/CreateEvent';
+
 import { Marker, Popup } from 'react-leaflet';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
+
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Login from "./Pages/Login";
+import Home from "./Pages/Home";
+
 
 function App(){
   return (
     <div className="App">
-      <EventSidebar></EventSidebar>
-      <EventPage></EventPage>
+      
+      <Router>
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path="/login" exact element={<Login />} />
+        </Routes>
+      </Router>
+
       {/* <CreateEvent></CreateEvent> */}
     </div>
   );
