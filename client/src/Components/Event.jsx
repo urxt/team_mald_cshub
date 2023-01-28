@@ -3,10 +3,11 @@ import React, { useEffect, useState } from "react";
 function Event(props) {
 
     const [eventData, setEventData] = useState({
+        pageCaller: props.pageCaller,
         name: "Test",
         headCount: 0,
-        time: Date,
-        location: "", // Change to specific location class
+        time: Date(),
+        location: [0.0,0.0], // Change to specific location class
         limit: 0,
         isLimit: true,
         students: []
@@ -22,7 +23,7 @@ function Event(props) {
         // String for message, header
     }
 
-    if (true) { // Make this be for EventPage
+    if (eventData.pageCaller === "eventPage") { // Make this be for EventPage
         return(
             <div>
                 <h1>
@@ -36,6 +37,9 @@ function Event(props) {
                 </nav>
             </div>
         )
+    } else if (eventData.pageCaller === "navigateMap") {
+        // Draw the location pin, pass in coordinates
+        // Draw
     }
 }
 

@@ -6,7 +6,7 @@ function EventPage() {
     return(
         <div className="eventPage">
             <div className="details">
-                <Event info="eventPage"></Event>
+                <Event pageCaller="eventPage"></Event>
             </div>
             <div className="map">
             <Circle r={50} fill={{color:'#2409ba'}} stroke={{color:'#E65243'}} strokeWidth={3} />
