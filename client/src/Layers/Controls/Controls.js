@@ -1,5 +1,5 @@
 import React from "react";
-const Layers = ({ children }) => {
+const Controls = ({ children }) => {
   return <div>{children}</div>;
 };
-export default Layers;
+export default Controls;
