@@ -9,7 +9,7 @@ import CreateEvent from './Pages/CreateEvent';
 function App(){
   return (
     <div className="App">
-      <EventSidebar></EventSidebar>
+      <EventSidebar className="sidebar"></EventSidebar>
       <EventPage></EventPage>
       {/* <CreateEvent></CreateEvent> */}
     </div>
