@@ -1,10 +1,10 @@
 import './App.css';
-
 import React, { Component, useState } from 'react';
 import * as ReactDOM from 'react-dom';
 import EventPage from './Pages/EventPage';
 import EventSidebar from './Components/EventSidebar';
 import CreateEvent from './Pages/CreateEvent';
+import OpenLayers from './OpenLayers/OpenLayers';
 
 const user = {
   name: 'John Jones',
@@ -18,7 +18,7 @@ export default function App(){
     <div className="App">
       <EventSidebar className="sidebar"></EventSidebar>
       <EventPage></EventPage>
-      {/* <CreateEvent></CreateEvent> */}
+      { <CreateEvent></CreateEvent> }
     </div>
     */
    return (
@@ -41,6 +41,11 @@ function GenerateMap() {
   return ( 
     <>
       <h3>York University Map (Keele Campus)</h3>
+      <script>
+      map = new OpenLayers.Map("demoMap");
+      map.addLayer(new OpenLayers.Layers.OSM());
+      map.zoomToMaxExtent();
+      </script>
     </>
   );
 }
