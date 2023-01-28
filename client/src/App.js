@@ -1,15 +1,13 @@
 import './App.css';
 import React, { Component, useState } from 'react';
 import * as ReactDOM from 'react-dom';
-import { Marker, Popup } from 'react-leaflet';
-import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login";
 import Home from "./Pages/Home";
 import EventPage from './Pages/EventPage';
 import EventSidebar from './Components/EventSidebar';
+import ProfilePage from './Pages/ProfilePage';
 import CreateEvent from './Pages/CreateEvent';
-import OpenLayers from './OpenLayers/OpenLayers';
 
 const user = {
   name: 'John Jones',
@@ -21,10 +19,13 @@ const user = {
 export default function App(){
     /*
     <div className="App">
+      <ProfilePage></ProfilePage>
+      {/* <EventSidebar className="sidebar"></EventSidebar>
+      <EventPage></EventPage> */}
+      {/* <CreateEvent></CreateEvent> */}
       <EventSidebar className="sidebar"></EventSidebar>
       <EventPage></EventPage>
       { <CreateEvent></CreateEvent> }
->>>>>>> 3c6d7bee5e501474f551cbb33ab5076eb1aaccc2
     </div>
     */
    return (
