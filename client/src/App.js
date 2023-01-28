@@ -1,6 +1,5 @@
 import './App.css';
-import React, { Component } from 'react';
-import render from 'react-dom';
+import React, { useState } from 'react';
 
 const user = {
   name: 'John Jones',
@@ -8,8 +7,6 @@ const user = {
   imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png",
   imageSize: 90,
 };
-
-const MapContext = new React.createContext();
 
 export default function App(){
     /*
