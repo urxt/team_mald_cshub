@@ -1,12 +1,18 @@
 import './App.css';
 import React, { Component } from 'react';
+import * as ReactDOM from 'react-dom';
+import EventPage from './Pages/EventPage';
+import EventSidebar from './Components/EventSidebar';
+import CreateEvent from './Pages/CreateEvent';
 import { Marker, Popup } from 'react-leaflet';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 
 function App(){
   return (
     <div className="App">
+      <EventSidebar></EventSidebar>
       <EventPage></EventPage>
+      {/* <CreateEvent></CreateEvent> */}
     </div>
   );
 }
