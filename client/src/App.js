@@ -10,7 +10,7 @@ import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 function App(){
   return (
     <div className="App">
-      <EventSidebar></EventSidebar>
+      <EventSidebar className="sidebar"></EventSidebar>
       <EventPage></EventPage>
       {/* <CreateEvent></CreateEvent> */}
     </div>
