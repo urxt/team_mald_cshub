@@ -3,15 +3,15 @@ import React, { Component } from 'react';
 import * as ReactDOM from 'react-dom';
 import EventPage from './Pages/EventPage';
 import EventSidebar from './Components/EventSidebar';
+import ProfilePage from './Pages/ProfilePage';
 import CreateEvent from './Pages/CreateEvent';
-import { Marker, Popup } from 'react-leaflet';
-import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 
 function App(){
   return (
     <div className="App">
-      <EventSidebar className="sidebar"></EventSidebar>
-      <EventPage></EventPage>
+      <ProfilePage></ProfilePage>
+      {/* <EventSidebar className="sidebar"></EventSidebar>
+      <EventPage></EventPage> */}
       {/* <CreateEvent></CreateEvent> */}
     </div>
   );
