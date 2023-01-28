@@ -1,5 +1,5 @@
 import './App.css';
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import * as ReactDOM from 'react-dom';
 
 //import { Marker, Popup } from 'react-leaflet';
@@ -7,10 +7,30 @@ import * as ReactDOM from 'react-dom';
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login";
+import Registration from "./Pages/Registration";
 import Home from "./Pages/Home";
+import axios from "axios";
 
 
 function App(){
+
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/login").then((response) => {
+                    if (response.data.error) {
+                        alert(response.data.error);
+                    } else {
+                      //  sessionStorage.setItem("accessToken", response.data);
+                
+                        //navigate(-1);
+                        console.log(response.data);
+                       
+                    }
+            })
+  }, [])
+
+
+
   return (
     <div className="App">
       
@@ -18,6 +38,7 @@ function App(){
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/login" exact element={<Login />} />
+          <Route path="/register" exact element={<Registration />} />
         </Routes>
       </Router>
 

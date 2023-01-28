@@ -51,6 +51,7 @@ app.get("/health", (_, res) => res.send("Test health status"));
 
 app.post("/register", async (req, res) => {
     const username = req.body.username;
+    const email = req.body.email;
     const password = req.body.password;
     const gender = req.body.gender;
     const age = req.body.age;
@@ -63,7 +64,7 @@ app.post("/register", async (req, res) => {
         if (err) {
             console.log(err);
         }
-        const q = new Users({ username: username, password: hash, gender: gender, age: age })
+        const q = new Users({ username: username, email: email, password: hash, gender: gender, age: age, schoolYear: schoolYear })
         try {
             const result = q.save().then((items) => res.json(items)).catch((err) => res.json({ message: "Username already exists!"}));
         
@@ -93,7 +94,7 @@ app.post("/login", async (req, res) => {
             console.log(items[0].password);
             bcrypt.compare(password, items[0].password).then((match) => {
                 if (!match) {
-                    res.json("Wrong username and password combination");
+                    res.json({ error: "Wrong username and password combination"});
                 } else {
                     req.session.username = items[0].username;
                     console.log(req.session.username);
