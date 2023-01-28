@@ -1,15 +1,9 @@
-.eventPage {
+.eventSummary {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.details {
-    align-self: left;
+.eventDetails{
     text-align: left;
-}
-
-
-.map {
-
 }

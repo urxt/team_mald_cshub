@@ -2,11 +2,16 @@ import './App.css';
 import React, { Component } from 'react';
 import * as ReactDOM from 'react-dom';
 import EventPage from './Pages/EventPage';
+import EventSidebar from './Components/EventSidebar';
+import CreateEvent from './Pages/CreateEvent';
+
 
 function App(){
   return (
     <div className="App">
+      <EventSidebar></EventSidebar>
       <EventPage></EventPage>
+      {/* <CreateEvent></CreateEvent> */}
     </div>
   );
 }
