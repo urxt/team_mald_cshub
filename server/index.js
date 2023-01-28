@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(express.json());
 
 mongoose.connect(
-    `mongodb+srv://team-mald-cshub:uELfjj8RubD8cCZb@team-mald-cshub.tfkwes7.mongodb.net/?retryWrites=true&w=majority`,
+    `mongodb+srv://team-mald-cshub:${process.env.DB_PASSWORD}@team-mald-cshub.tfkwes7.mongodb.net/?retryWrites=true&w=majority`,
     {
         useNewUrlParser: true,
     }
