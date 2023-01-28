@@ -1,32 +1,46 @@
 import './App.css';
-import React, { Component, useState } from 'react';
+import React, { useEffect } from 'react';
 import * as ReactDOM from 'react-dom';
 //import { Marker, Popup } from 'react-leaflet';
 //import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login";
+import Registration from "./Pages/Registration";
 import Home from "./Pages/Home";
-import EventPage from './Pages/EventPage';
-import EventSidebar from './Components/EventSidebar';
-import ProfilePage from './Pages/ProfilePage';
-import CreateEvent from './Pages/CreateEvent';
-import { osm, vector } from "./Source";
+import axios from "axios";
 
 
-export defaut function App(){
+function App(){
+
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/login").then((response) => {
+                    if (response.data.error) {
+                        alert(response.data.error);
+                    } else {
+                      //  sessionStorage.setItem("accessToken", response.data);
+                
+                        //navigate(-1);
+                        console.log(response.data);
+                       
+                    }
+            })
+  }, [])
+
+
+
   return (
     <div className="App">
-      <ProfilePage></ProfilePage>
+     
       {/* <EventSidebar className="sidebar"></EventSidebar>
       <EventPage></EventPage> */}
       {/* <CreateEvent></CreateEvent> */}
-      <EventSidebar className="sidebar"></EventSidebar>
-      <EventPage></EventPage>
-
+  
       <Router>
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/login" exact element={<Login />} />
+          <Route path="/register" exact element={<Registration />} />
         </Routes>
       </Router>
 
@@ -68,3 +82,5 @@ function User() {
 User.prototype.toString = function UserToString() {
   return `Name: ${this.name}\n Age: ${this.age}\n Email: ${this.email}\n Gender: ${this.gender}`;
 }
+
+export default App;

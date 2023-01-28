@@ -35,13 +35,12 @@ function Login() {
     validationSchema: validationSchema,
     onSubmit: (values) => {
       axios
-        .post("https://course-reviews-backend.vercel.app/user/login", values)
+        .post("http://localhost:3001/login", values)
         .then((response) => {
           if (response.data.error) {
             alert(response.data.error);
           } else {
-            sessionStorage.setItem("accessToken", response.data);
-            //setAuthState(true);
+            alert("Logged in!")  
             navigate(-1);
           }
         });
