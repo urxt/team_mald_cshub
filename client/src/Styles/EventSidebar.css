@@ -1,0 +1,9 @@
+.eventSummary {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.eventDetails{
+    text-align: left;
+}
