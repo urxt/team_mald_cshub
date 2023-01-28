@@ -1,0 +1,15 @@
+.eventPage {
+    display: flex;
+    flex-direction: row;
+    left: 50%;
+}
+
+.details {
+    align-self: left;
+    text-align: left;
+}
+
+
+.map {
+
+}
