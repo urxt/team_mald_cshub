@@ -2,8 +2,8 @@ import './App.css';
 import React, { Component } from 'react';
 import * as ReactDOM from 'react-dom';
 
-import { Marker, Popup } from 'react-leaflet';
-import { MapContainer, TileLayer, useMap } from 'react-leaflet';
+//import { Marker, Popup } from 'react-leaflet';
+//import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login";
