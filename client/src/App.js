@@ -1,19 +1,28 @@
 import './App.css';
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import * as ReactDOM from 'react-dom';
-
 //import { Marker, Popup } from 'react-leaflet';
 //import { MapContainer, TileLayer, useMap } from 'react-leaflet';
-
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login";
 import Home from "./Pages/Home";
+import EventPage from './Pages/EventPage';
+import EventSidebar from './Components/EventSidebar';
+import ProfilePage from './Pages/ProfilePage';
+import CreateEvent from './Pages/CreateEvent';
+import { osm, vector } from "./Source";
 
 
-function App(){
+export defaut function App(){
   return (
     <div className="App">
-      
+      <ProfilePage></ProfilePage>
+      {/* <EventSidebar className="sidebar"></EventSidebar>
+      <EventPage></EventPage> */}
+      {/* <CreateEvent></CreateEvent> */}
+      <EventSidebar className="sidebar"></EventSidebar>
+      <EventPage></EventPage>
+
       <Router>
         <Routes>
           <Route path="/" exact element={<Home />} />
@@ -21,7 +30,6 @@ function App(){
         </Routes>
       </Router>
 
-      {/* <CreateEvent></CreateEvent> */}
     </div>
   );
 }
@@ -60,5 +68,3 @@ function User() {
 User.prototype.toString = function UserToString() {
   return `Name: ${this.name}\n Age: ${this.age}\n Email: ${this.email}\n Gender: ${this.gender}`;
 }
-
-export default App;
