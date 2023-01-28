@@ -1,21 +1,38 @@
 import './App.css';
 import React, { Component, useState } from 'react';
 import * as ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Login from "./Pages/Login";
+import Home from "./Pages/Home";
 import EventPage from './Pages/EventPage';
 import EventSidebar from './Components/EventSidebar';
+import ProfilePage from './Pages/ProfilePage';
 import CreateEvent from './Pages/CreateEvent';
-import { Circle as CircleStyle, Fill, Stroke, Style } from 'ol/style';
 import { osm, vector } from "./Source";
 
 export default function App(){
     /*
     <div className="App">
+      <ProfilePage></ProfilePage>
+      {/* <EventSidebar className="sidebar"></EventSidebar>
+      <EventPage></EventPage> */}
+      {/* <CreateEvent></CreateEvent> */}
       <EventSidebar className="sidebar"></EventSidebar>
       <EventPage></EventPage>
       { <CreateEvent></CreateEvent> }
     </div>
     */
    return (
+
+    <div className="App">
+      
+      <Router>
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path="/login" exact element={<Login />} />
+        </Routes>
+      </Router>
+
     <div>
       <h1>MeetYU</h1>
       <MapButton />
