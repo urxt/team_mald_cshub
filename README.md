@@ -1,6 +1,6 @@
-### Team MALD | CSHUB
+# MeetYU
 
-MeetYU
+by Team MALD
 
 The Best Event finder site in town! 
 
