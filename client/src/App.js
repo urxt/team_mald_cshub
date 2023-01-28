@@ -9,10 +9,6 @@ function App(){
       <Welcome name="Daniel" />
       <Welcome name="Daniel" />
     </div>
-
-    <div>
-      <User name="Wahoo", age=20, gender="male", email="john" />
-    </div>
   );
 }
 
@@ -20,8 +16,7 @@ function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }
 
-function User(name, age, gender, email) {
-  this.name = name;
+function User (name, age, gender, email) {
   this.age = age;
   this.gender = gender;
   this.email = email;
