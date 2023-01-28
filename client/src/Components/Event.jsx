@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import {Circle} from 'react-shapes';
 import "../Styles/EventSidebar.css";
 
 function Event(props) {
@@ -7,7 +6,7 @@ function Event(props) {
     const [eventData, setEventData] = useState({
         name: "Test",
         headCount: 0,
-        time: Date(),
+        time: Date(Date.now),
         building: "Bergeron Centre",
         location: [0.0,0.0], // Change to specific location class
         limit: 0,
@@ -33,12 +32,20 @@ function Event(props) {
                 <h1>
                     {eventData.name}
                 </h1>
-                <nav>
-                    <button>
-                        
-                    </button>
-                    
-                </nav>
+                <p>
+                    Are confirmed coming. Max capacity
+                </p>
+                <p>
+                    Comfortable
+                </p>
+                <p>
+                    Time
+                </p>
+                <p>
+                    Location
+                </p>
+                <button className="joinBtn">Join</button>
+                
             </div>
         )
     } else if (eventData.pageCaller === "navigateMap") {
@@ -49,9 +56,10 @@ function Event(props) {
         <div className="eventSummary">
             <div className="eventDetails">
                 <h2>{eventData.name}</h2>
-                <h3>{eventData.building}</h3>
+                <p>{eventData.time}</p>
+                <p>{eventData.building}</p>
             </div>
-            <Circle r={30} fill={{color:'#2409ba'}} stroke={{color:'#E65243'}} strokeWidth={3} />
+            
     
         </div>
         

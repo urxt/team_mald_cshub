@@ -6,12 +6,18 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+<<<<<<< HEAD
     "leaflet": "^1.9.3",
     "nodemon": "^2.0.20",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-leaflet": "^4.2.0",
     "react-router-dom": "^6.8.0",
+=======
+    "ol": "^7.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+>>>>>>> 9f1b80111b2daa4093b26f5918d70a395023494d
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
