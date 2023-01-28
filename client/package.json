@@ -9,10 +9,7 @@
     "leaflet": "^1.9.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
     "react-leaflet": "^4.2.0",
-=======
->>>>>>> b5665b13285434ca9662b8000403599358a8f8ea
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },

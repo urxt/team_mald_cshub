@@ -1,6 +1,7 @@
 import './App.css';
 import React, { Component } from 'react';
 import * as ReactDOM from 'react-dom';
+import EventPage from './Pages/EventPage';
 
 function App(){
   return (
@@ -8,6 +9,8 @@ function App(){
       <Welcome name="Daniel" />
       <Welcome name="Daniel" />
       <Welcome name="Daniel" />
+    <div className="App">
+      <EventPage></EventPage>
     </div>
   );
 }
