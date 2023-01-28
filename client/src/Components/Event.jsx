@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
+import "../Styles/EventSidebar.css";
 
 function Event(props) {
 
     const [eventData, setEventData] = useState({
-        pageCaller: props.pageCaller,
         name: "Test",
         headCount: 0,
-        time: Date(),
+        time: Date(Date.now),
+        building: "Bergeron Centre",
         location: [0.0,0.0], // Change to specific location class
         limit: 0,
         isLimit: true,
-        students: []
+        students: [],
+
+        pageCaller: props.pageCaller
     });
 
     function addStudent(student) {
@@ -29,18 +32,39 @@ function Event(props) {
                 <h1>
                     {eventData.name}
                 </h1>
-                <nav>
-                    <button>
-                        
-                    </button>
-                    
-                </nav>
+                <p>
+                    Are confirmed coming. Max capacity
+                </p>
+                <p>
+                    Comfortable
+                </p>
+                <p>
+                    Time
+                </p>
+                <p>
+                    Location
+                </p>
+                <button className="joinBtn">Join</button>
+                
             </div>
         )
     } else if (eventData.pageCaller === "navigateMap") {
         // Draw the location pin, pass in coordinates
         // Draw
-    }
+    } else if (eventData.pageCaller === "eventSidebar") {
+        return(
+        <div className="eventSummary">
+            <div className="eventDetails">
+                <h2>{eventData.name}</h2>
+                <p>{eventData.time}</p>
+                <p>{eventData.building}</p>
+            </div>
+            
+    
+        </div>
+        
+        )
+        }
 }
 
 export default Event

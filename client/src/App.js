@@ -1,5 +1,10 @@
 import './App.css';
-import React, { useState } from 'react';
+
+import React, { Component, useState } from 'react';
+import * as ReactDOM from 'react-dom';
+import EventPage from './Pages/EventPage';
+import EventSidebar from './Components/EventSidebar';
+import CreateEvent from './Pages/CreateEvent';
 
 const user = {
   name: 'John Jones',
@@ -11,7 +16,9 @@ const user = {
 export default function App(){
     /*
     <div className="App">
+      <EventSidebar className="sidebar"></EventSidebar>
       <EventPage></EventPage>
+      {/* <CreateEvent></CreateEvent> */}
     </div>
     */
    return (

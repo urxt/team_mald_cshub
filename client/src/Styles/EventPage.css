@@ -1,7 +1,7 @@
 .eventPage {
     display: flex;
     flex-direction: row;
-    left: 50%;
+    justify-content: center;
 }
 
 .details {
@@ -11,5 +11,6 @@
 
 
 .map {
-
+    bottom: 90%;
+    right: 100%
 }
