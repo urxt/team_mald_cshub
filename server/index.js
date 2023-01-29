@@ -124,6 +124,28 @@ app.get("/all-events", async (req, res) => {
     const q = Events.find({}).then((items) => res.json(items));
 })
 
+app.post("/add-event", async (req, res) => {
+
+    const eventName = req.body.eventName;
+    const limit = req.body.limit;
+    const dressCode = req.body.dressCode;
+    const date = req.body.date;
+    const buildingName = req.body.buildingName;
+    const streetNum = req.body.streetNum;
+    const streetName = req.body.streetName;
+    const postalCode = req.body.postalCode;
+
+    const q = new Events({ eventName: eventName, limit: limit, dressCode: dressCode, date: date, buildingName: buildingName, streetNum: streetNum, streetName: streetName, postalCode: postalCode });
+
+    try {
+        const result = q.save().then((items) => res.json(items)).catch((err) => res.json({ error: "Event name already exists!"}));
+    
+    } catch (err) {
+        res.json(err);
+    }
+    
+})
+
 app.listen(3001, () => {
     console.log("Server running on port 3001");
 });
