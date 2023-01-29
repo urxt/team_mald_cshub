@@ -12,6 +12,7 @@ import axios from "axios";
 
 function App(){
 
+  axios.defaults.withCredentials = true;
 
   useEffect(() => {
     axios.get("http://localhost:3001/login").then((response) => {
