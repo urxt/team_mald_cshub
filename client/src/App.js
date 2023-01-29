@@ -1,27 +1,31 @@
 import './App.css';
-import React, { Component, useState } from 'react';
+import React, { useEffect } from 'react';
 import * as ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login";
+import Registration from "./Pages/Registration";
 import Home from "./Pages/Home";
-import EventPage from './Pages/EventPage';
-import EventSidebar from './Components/EventSidebar';
-import ProfilePage from './Pages/ProfilePage';
-import CreateEvent from './Pages/CreateEvent';
-
-const user = {
-  name: 'John Jones',
-  email: "john@jones.com",
-  imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png",
-  imageSize: 90,
-};
+import axios from "axios";
 
 export default function App(){
 
-   return (
+  axios.defaults.withCredentials = true;
+  useEffect(() => {
+    axios.get("http://localhost:3001/login").then((response) => {
+                    if (response.data.error) {
+                        alert(response.data.error);
+                    } else {
+                      //  sessionStorage.setItem("accessToken", response.data);
+                
+                        //navigate(-1);
+                        console.log(response.data);
+                       
+                    }
+            })
+  }, [])
 
+  return (
     <div className="App">
-      
       <Router>
         <Routes>
           <Route path="/home" exact element={<Home />} />
@@ -30,14 +34,11 @@ export default function App(){
         </Routes>
       </Router>
 
-      <div>
-        <h1>MeetYU</h1>
-        <MapButton />
-        <GenerateMap />
-        <User />
-      </div>
+          <Route path="/register" exact element={<Registration />} />
+        </Routes>
+      </Router>
     </div>
-   );
+  );
 }
 
 function MapButton() {
@@ -46,18 +47,12 @@ function MapButton() {
   );
 }
 
-function GenerateMap() {
-  return ( 
-    <>
-      <h3>York University Map (Keele Campus)</h3>
-      <script>
-      map = new OpenLayers.Map("demoMap");
-      map.addLayer(new OpenLayers.Layers.OSM());
-      map.zoomToMaxExtent();
-      </script>
-    </>
-  );
-}
+const user = {
+  name: 'John Jones',
+  email: "john@jones.com",
+  imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png",
+  imageSize: 90,
+};
 
 function User() {
   return(
@@ -76,3 +71,9 @@ function User() {
     </>
   );
 }
+
+User.prototype.toString = function UserToString() {
+  return `Name: ${this.name}\n Age: ${this.age}\n Email: ${this.email}\n Gender: ${this.gender}`;
+}
+
+export default App;
