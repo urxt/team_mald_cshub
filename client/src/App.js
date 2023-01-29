@@ -17,33 +17,25 @@ const user = {
 };
 
 export default function App(){
-    /*
-    <div className="App">
-      <ProfilePage></ProfilePage>
-      {/* <EventSidebar className="sidebar"></EventSidebar>
-      <EventPage></EventPage> */}
-      {/* <CreateEvent></CreateEvent> */}
-      <EventSidebar className="sidebar"></EventSidebar>
-      <EventPage></EventPage>
-      { <CreateEvent></CreateEvent> }
-    </div>
-    */
+
    return (
 
     <div className="App">
       
       <Router>
         <Routes>
-          <Route path="/" exact element={<Home />} />
+          <Route path="/home" exact element={<Home />} />
           <Route path="/login" exact element={<Login />} />
+          <Route path="/" exact element={<ProfilePage/>} />
         </Routes>
       </Router>
 
-    <div>
-      <h1>MeetYU</h1>
-      <MapButton />
-      <GenerateMap />
-      <User />
+      <div>
+        <h1>MeetYU</h1>
+        <MapButton />
+        <GenerateMap />
+        <User />
+      </div>
     </div>
    );
 }

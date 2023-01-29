@@ -1,0 +1,25 @@
+.mainProfile{
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    
+}
+
+.programDetails{
+    display: flex;
+    flex-direction: row;
+}
+
+.year {
+    margin-left: 2vw;
+}
+
+.otherStuff {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.otherStuff > * {
+    margin: 0vh 2vw;
+}
