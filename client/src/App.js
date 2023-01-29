@@ -1,8 +1,6 @@
 import './App.css';
 import React, { useEffect } from 'react';
 import * as ReactDOM from 'react-dom';
-//import { Marker, Popup } from 'react-leaflet';
-//import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login";
 import Registration from "./Pages/Registration";
@@ -28,15 +26,8 @@ function App(){
             })
   }, [])
 
-
-
   return (
     <div className="App">
-     
-      {/* <EventSidebar className="sidebar"></EventSidebar>
-      <EventPage></EventPage> */}
-      {/* <CreateEvent></CreateEvent> */}
-  
       <Router>
         <Routes>
           <Route path="/" exact element={<Home />} />

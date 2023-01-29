@@ -16,7 +16,6 @@ function ProfilePage() {
                 <div className="userEvents"></div>
                 <div className="newConnections"></div>
             </div>
-
         </div>
         
     )
