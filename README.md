@@ -2,6 +2,6 @@
 
 by Team MALD
 
-The Best Event finder site in town! 
+The Best Event finder app in town! 
 
 ![Demo](./demo.png)
