@@ -7,11 +7,9 @@ import Registration from "./Pages/Registration";
 import Home from "./Pages/Home";
 import axios from "axios";
 
-
-function App(){
+export default function App(){
 
   axios.defaults.withCredentials = true;
-
   useEffect(() => {
     axios.get("http://localhost:3001/login").then((response) => {
                     if (response.data.error) {
@@ -30,12 +28,15 @@ function App(){
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" exact element={<Home />} />
+          <Route path="/home" exact element={<Home />} />
           <Route path="/login" exact element={<Login />} />
-          <Route path="/register" exact element={<Registration />} />
+          <Route path="/" exact element={<ProfilePage/>} />
         </Routes>
       </Router>
 
+          <Route path="/register" exact element={<Registration />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
