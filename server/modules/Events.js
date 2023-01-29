@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const EventsSchema = new mongoose.Schema({
     eventName: {
         type: String,
+        unique: true,
         required: true,
     },
     limit: {
