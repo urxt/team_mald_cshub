@@ -25,8 +25,9 @@ const oneDay = 1000 * 60 * 60 * 24;
 const saltRounds = 10;
 
 app.use(sessions({
+    key: "userID",
     secret: process.env.secret_key,
-    saveUninitialized: false,
+    saveUninitialized: true,
     cookie: { maxAge: oneDay },
     resave: false
 }))
@@ -77,9 +78,9 @@ app.post("/register", async (req, res) => {
 
 app.get("/login", (req, res) => {
     if (req.session.username) {
-        res.json({ loggedIn: true, username: req.session.username })
+        res.json({ loggedIn: true, username: req.session.username, session: req.session })
     } else {
-        res.json({ loggedIn: false });
+        res.json({ loggedIn: false, session: req.session });
     }
 })
 
