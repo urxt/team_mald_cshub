@@ -5,6 +5,17 @@
     
 }
 
+.friendsImg{
+    width: 10%;
+}
+
+.friends{
+    display: inline-block;
+}
+
+
+
+
 .programDetails{
     display: flex;
     flex-direction: row;

@@ -1,4 +1,5 @@
 import "../Styles/ProfilePage.css";
+import Male1 from "../Images/MaleProfile1.png";
 
 function ProfilePage() {
     return(
@@ -20,10 +21,10 @@ function ProfilePage() {
                 <div className="friends">
                     <h1>Friends</h1>
                     <div className="friendImg">
-                        <img src="../logo.svg"></img>
-                        <img src="../logo.svg"></img>
-                        <img src="../logo.svg"></img>
-                        <img src="../logo.svg"></img>
+                        <img className="friendsImg" src={Male1}></img>
+                        <img className="friendsImg" src={Male1}></img>
+                        <img className="friendsImg" src={Male1}></img>
+                        <img className="friendsImg" src={Male1}></img>
                     </div>
                 </div>
                 <div className="userEvents">

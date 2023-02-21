@@ -3,11 +3,12 @@ import React, { useEffect } from 'react';
 import * as ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login";
+import ProfilePage from "./Pages/ProfilePage";
 import Registration from "./Pages/Registration";
 import Home from "./Pages/Home";
 import axios from "axios";
 
-export default function App(){
+function App(){
 
   axios.defaults.withCredentials = true;
   useEffect(() => {
@@ -31,9 +32,6 @@ export default function App(){
           <Route path="/home" exact element={<Home />} />
           <Route path="/login" exact element={<Login />} />
           <Route path="/" exact element={<ProfilePage/>} />
-        </Routes>
-      </Router>
-
           <Route path="/register" exact element={<Registration />} />
         </Routes>
       </Router>
